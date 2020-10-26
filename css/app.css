@@ -1,3 +1,6 @@
+#brand h1 {
+  font-size: 2em !important;
+}
 #nav .menu .item:not(.title) a::before {
   content: "";
   position: absolute;
@@ -4701,6 +4704,7 @@ code,
 .code-container {
   font-family: 'Inconsolata', consolas, Menlo, -apple-system, "PingFang SC", "Microsoft YaHei";
   font-size: 1em;
+  margin-top: 25px;
 }
 :not(td)>pre {
   background: var(--grey-1);

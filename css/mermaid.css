@@ -1,3 +1,6 @@
+#brand h1 {
+  font-size: 2em !important;
+}
 pre.mermaid,
 pre.graphviz {
   background: none;
