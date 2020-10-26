@@ -27,12 +27,12 @@
   <meta name="keywords" content="ios设计规范,互联网" />
 
 
-<link rel="canonical" href="http://example.com/2020/10/25/ios/">
+<link rel="canonical" href="http://example.com/2020/10/26/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8A%EF%BC%89/">
 
 
 
   <title>
-iOS - Human Interface Guidelines |
+iOS应用架构（上） - Human Interface Guidelines |
 Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,23 +60,23 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">iOS
+  <h1 itemprop="name headline">iOS应用架构（上）
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2020-10-25 20:52:53">
+  <span class="item" title="创建时间：2020-10-26 20:52:53">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2020-10-25T20:52:53+08:00">2020-10-25</time>
+    <time itemprop="dateCreated datePublished" datetime="2020-10-26T20:52:53+08:00">2020-10-26</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>1.2k</span>
+    <span>1.8k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>1 分钟</span>
+    <span>2 分钟</span>
   </span>
 </div>
 
@@ -117,12 +117,12 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,7 +153,7 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/25/ios/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/26/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8A%EF%BC%89/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -168,51 +168,33 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>作为⼀名 App 设计师，你有机会发布一款能够登上 App Store 榜⾸的卓越产 品。为此，你的应⽤在质量和功能上必须精益求精。</p>
+    <p>作为⼀名 App 设计师，你有机会发布一款能够登上 App Store 榜⾸的卓越产品。为此，你的应⽤在质量和功能上必须精益求精。</p>
 <a id="more"></a>
-<h3 id="ios设计主题"><a class="markdownIt-Anchor" href="#ios设计主题">#</a> ios 设计主题</h3>
-<div class="note danger no-icon">
-<p>iOS 与其他平台不同，主要是下⾯面三大原则：</p>
-</div>
+<h3 id="启动"><a class="markdownIt-Anchor" href="#启动">#</a> 启动</h3>
+<p>启动体验对用户观感有重大影响。无论用户使用什么设备，无论他们多久启动一次 APP，启动都应该是快速，无缝衔接的。</p>
+<p>以下准则可帮助您设计令人愉悦的启动体验。有关开发人员的指导，请参阅<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2RvY3VtZW50YXRpb24vdWlraXQvYXBwX2FuZF9lbnZpcm9ubWVudC9yZXNwb25kaW5nX3RvX3RoZV9sYXVuY2hfb2ZfeW91cl9hcHA=">响应启动 APP</span>。</p>
 <ul>
-<li>
-<p><span class="red">清晰。</span>整个系统中，任何字号的文字都必须清晰易读，图标表达含义准确易懂，修饰恰到好处，以功能驱动设计。留白、颜色、字体、图形和其他界面元素能够巧妙地突出重点内容并传达交互性。</p>
-</li>
-<li>
-<p><span class="red">顺应。</span>流畅的动效和清晰美观的界面有助于⽤用户理解内容并与之交互，且不会干扰⽤用户。当内容占据整屏时，半透明和模糊处理通常会暗示其他更更多的内 容。减少使⽤用边框、渐变和阴影，使界⾯尽可能轻量化，从而突显内容。</p>
-</li>
-<li>
-<p><span class="red">纵深。</span>清晰的视觉层和⽣动的动效赋予界⾯层次感，使其富有活力并有助于理理解。使可触发界⾯元素更容易被找到能提升体验的愉悦感，让用户在触发相应功能或者获取更更多内容时不至于茫然⽆措。当用户浏览内容时，流畅的 过渡能够提供纵深感。</p>
-</li>
+<li><strong>提供一个启动页</strong>。应⽤程序启动时会出现启动屏幕，从而给⼈的印象是应用程序快速响应，同时允许加载初始内容。此屏幕很快就会被您应用的第一个屏幕取代，因此除了可本地化的文本和交互元素外，它应该与此屏幕非常相似。要了解更多信息，请参阅<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3MvdmlzdWFsLWRlc2lnbi9sYXVuY2gtc2NyZWVu">启动屏幕</span>。</li>
+<li><strong>以适当的方向启动</strong>。 如果 APP 同时支持竖屏和横屏，那么应该按照的当前屏幕的方向启动。 如果 APP 仅以一种方向运行，则应始终以该方向启动，并在需要时让用户旋转设备。 除非有让用户接受的理由，否则无论设备向左还是向右旋转，处于横向模式的 APP 都应正确定位启动方向。 有关指导，请参见<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3MvdmlzdWFsLWRlc2lnbi9hZGFwdGl2aXR5LWFuZC1sYXlvdXQ=">适应性和布局</span>。</li>
+<li><strong>避免提前询问设置信息</strong>。用户都希望 APP 能够正常运行。 设计 APP 需要满足大多数用户的需要，为少数需要不同设置用户提供自定义。 尽可能从设备设置和默认设置、或通过同步服务（例如 iCloud）获取设置信息。 如果必须询问用户的设置信息，提醒他们在首次启动应用时提供相应信息，并告知用户稍后在 APP 设置中也能对其修改。</li>
+<li><strong>避免 APP 内显示许可协议和免责声明</strong>。 让 App Store 显示协议和免责声明，以便用户可以在下载 APP 之前阅读它们。 如果必须在 APP 中包含，用一种不影响用户体验的方式整合设计。</li>
+<li><strong>应用重新启动时，恢复之前的操作状态</strong>。 不要让用户操作重复的步骤。 保留并恢复之前的 app 状态，以便用户可以从中断的地方继续。</li>
+<li><strong>不要鼓励重启</strong>。 重新启动会花费一些时间，并使 APP 看起来不可靠且难以使用。 如果 APP 存在内存或其他问题，使其在只能在系统刚启动时运行，那么需要解决这些问题。</li>
+<li><strong>不要让用户太快或太频繁地给 APP 评分</strong>。在首次启动后不久后立即要求评分，或者在用户使用 APP 频繁地要求评分，会让人感到厌烦，并可能会减少有用评价数量。为了鼓励用户经过深思熟虑的评论，在要求评分之前，给用户时间来形成对 APP 的看法。始终提供一种方法退出评分提示，永远不要强迫用户给你的 APP 评分。</li>
 </ul>
-<hr>
-<h3 id="ios设计原则"><a class="markdownIt-Anchor" href="#ios设计原则">#</a> ios 设计原则</h3>
-<div class="note danger no-icon">
-<p>为了最⼤限度地提高影响⼒和覆盖面，请在考虑应⽤的身份时牢记以下原则:</p>
-</div>
-<p><strong>整体美感</strong></p>
-<p>整体美感体现在⼀一款 App 的视觉外观、交互行为与其功能结合的优异程度。 例如，一款协助⽤户完成重要任务的 App 应该使用不易察觉且不会造成⼲扰的图形、标准化控件和可预知的交互⾏为，从⽽使用户聚焦在任务本身。 反之， ⼀款沉浸式体验的 App (如游戏)，需要提供一个有吸引力的界⾯， 在⿎励⽤户探索的同时为⽤户带来无穷的乐趣和激动。</p>
-<p><strong>一致性</strong></p>
-<p>⼀致的应用程序通过使用系统提供的界⾯元素，众所周知的图标，标准文本样式和统一术语来实现熟悉的标准和范例。该应用程序以人们期望的⽅式结合了功能和行为。</p>
-<p><strong>直观操纵</strong></p>
-<p>屏幕内容的直观操作吸引用户并增强理解。⽤户在旋转设备或使⽤手势操作屏幕内容，通过直观操纵，他们可以看到他们行动的直接可见的结果。</p>
-<p><strong>反馈</strong></p>
-<p>反馈能够响应交互操作，呈现结果，便于⽤户了解情况。ios 系统自带的 Ap 对用户的每个操作都提供了了明确的反馈。</p>
-<ul>
-<li>交互元素在点击时会被高亮显示</li>
-<li>进度指示器显示了需要长时间运行的操作进度</li>
-<li>动效和声⾳使⽤户能够更清晰地了解交互行为的结果</li>
-</ul>
-<p><strong>隐喻</strong></p>
-<p>当⼀个 App 的虚拟对象和行为与用户所熟悉的体验相似时 —— ⽆论这种体验来源于现实生活亦或是数字世界，用户就能够更快速地学会使用这款 App。 隐喻在 iOS 中能够起作⽤用是因为用户与屏幕进行物理上的交互。</p>
-<ul>
-<li>可以通过移动分层视图来显示被遮挡的内容</li>
-<li>可以拖拽并滑动对象</li>
-<li>可以切换开关，移动滑块，滚动数值选择器器</li>
-<li>可以通过轻扫来翻阅书籍和杂志</li>
-</ul>
-<p><strong>用户控制</strong></p>
-<p>在 iOS 中，决策是⽤户⽽非 App。App 可以对用户行为提出建议，对可能造成严重后果的⾏行为发出警告，但不应该直接替用户做决策。优秀的 App 在用户主导和避免不想要的结果之间找到平衡。为了让用户拥有掌控性， App 可以使用户熟悉且可预知的交互元素，让用户⼆次确认破坏性的⾏为， 并且保证可以停止正在执行中的操作。</p>
+<h3 id="新手上路"><a class="markdownIt-Anchor" href="#新手上路">#</a> 新手上路</h3>
+<p>启用后，你可以欢迎新用户并与老用户重新建立联系。 设计快速，有趣且具有教育意义的入门操作可以帮助用户从 APP 获得最大价值而不会遇到障碍。</p>
+<p>** 提供新手教程，让用户享受你的应用程序的加载，而不仅仅是按启动流程去执行它。** 用户会很高兴有机会更多地了解你的应用程序，但他们也希望 APP 能正常工作。避免在新手教程中包含设置或许可细节。有关指导，请参见启动。</p>
+<p><strong>迅速采取行动</strong>，系统将 APP 启动屏幕替换为 APP 初始屏幕后，让用户立即进入并开始使用 APP。 如果需要提供教程或简介，请提供给用户跳过它们的方法，并且不会主动向老用户显示。</p>
+<p><strong>预计需要帮助</strong>。寻找用户可能被打断的节点。例如，游戏可以在暂停或⻆色没有前进时随意显示有用的提示。如果人们首次启动时错过某些内容，可以让他们重播教程。</p>
+<p><strong>坚持教程中的要点</strong>。为新用户提供指导是好的，但引导并不能代替优秀的应⽤程序设计。首先，让 APP 更直观。如果需要太多指导，请考虑重新设计 APP。</p>
+<p><strong>在操作中学习更有趣</strong>。边做边学⽐阅读指引说明更有趣，也更有效。使⽤动画和交互来逐步在情境中指引用户。避免显示静态式的截图教学。</p>
+<h3 id="载入时"><a class="markdownIt-Anchor" href="#载入时">#</a> 载入时</h3>
+<p>当内容加载时，一个空白或静态的屏幕显示会让 APP 看起来像是被冻结了，导致引起用户混淆和失望，并可能导致用户卸载 APP。</p>
+<p><strong>当加载发生时明确说明</strong>。至少，显示一个交互提示器，表示正在发⽣的事情。更好的方法是，清晰地显示进度，这样用户就可以估计他们要等多久了。</p>
+<p><strong>尽快显示内容。</strong> 在用户在看到期待内容之前，不要让用户等待内容加载。 立即显示屏幕，并使用占位符文本，图形或动画来标识尚不可用的内容。 在内容加载时替换这些占位符元素。 尽可能在后台预加载即将播放的内容，比如当动画正在播放或用户正在浏览其他内容时。</p>
+<p><strong>教育或娱乐用户，以掩盖加载时间</strong>。考虑显示关于游戏玩法的提示，有趣的视频序列，或者有趣的占位符图形提示。</p>
+<p><strong>自定义加载屏幕</strong>。 尽管可以使用标准的进度指示器，但这会偏离 APP 设计基调。 可以考虑通过与 APP 或游戏的风格相匹配的自定义动画和元素来设计更逼真的体验。</p>
 
       <div class="tags">
           <a href="/tags/ios%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/" rel="tag"><i class="ic i-tag"></i> ios设计规范</a>
@@ -228,7 +210,7 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2020-10-26 08:54:14" itemprop="dateModified" datetime="2020-10-26T08:54:14+08:00">2020-10-26</time>
+    <time title="修改时间：2020-10-26 21:38:51" itemprop="dateModified" datetime="2020-10-26T21:38:51+08:00">2020-10-26</time>
   </span>
 </div>
 
@@ -264,7 +246,7 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2020/10/25/ios/" title="iOS">http://example.com/2020/10/25/ios/</a>
+    <a href="http://example.com/2020/10/26/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8A%EF%BC%89/" title="iOS应用架构（上）">http://example.com/2020/10/26/ios应用架构（上）/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -283,10 +265,10 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
     <div class="item left">
       
 
-  <a href="/2020/10/24/%E5%AE%8B%E4%BB%A3%E6%96%87%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicli9lfebj20zk0m84qp.jpg" title="宋代文学史（一）">
+  <a href="/2020/10/25/ios%E8%AE%BE%E8%AE%A1%E4%BB%8B%E7%BB%8D/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclx29mstj20zk0m8hdt.jpg" title="iOS">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 文章</span>
-  <h3>宋代文学史（一）</h3>
+  <span class="category"><i class="ic i-flag"></i> Human Interface Guidelines</span>
+  <h3>iOS</h3>
   </a>
 
     </div>
@@ -307,11 +289,11 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ios%E8%AE%BE%E8%AE%A1%E4%B8%BB%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text"> ios 设计主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ios%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text"> ios 设计原则</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text"> 启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E6%89%8B%E4%B8%8A%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text"> 新手上路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%BD%E5%85%A5%E6%97%B6"><span class="toc-number">3.</span> <span class="toc-text"> 载入时</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2020/10/25/ios/" rel="bookmark" title="iOS">iOS</a></li>
+          <li><a href="/2020/10/25/ios%E8%AE%BE%E8%AE%A1%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="iOS">iOS</a></li><li class="active"><a href="/2020/10/26/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8A%EF%BC%89/" rel="bookmark" title="iOS应用架构（上）">iOS应用架构（上）</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -325,7 +307,7 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">16</span>
+        <span class="count">17</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -419,13 +401,13 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">63k 字</span>
+    <span title="站点总字数">64k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">57 分钟</span>
+    <span title="站点阅读时长">59 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
@@ -437,7 +419,7 @@ Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2020/10/25/ios/',
+    path: '2020/10/26/ios应用架构（上）/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
