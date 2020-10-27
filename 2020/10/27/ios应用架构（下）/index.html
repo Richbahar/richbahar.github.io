@@ -1,0 +1,517 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="我看诸君皆装逼，料诸君见我应如是" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="我看诸君皆装逼，料诸君见我应如是" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="我看诸君皆装逼，料诸君见我应如是" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.3">
+
+  
+  <meta name="keywords" content="ios设计规范,互联网" />
+
+
+<link rel="canonical" href="http://example.com/2020/10/27/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8B%EF%BC%89/">
+
+
+
+  <title>
+iOS应用架构（下） - Human Interface Guidelines |
+Bahargul = 我看诸君皆装逼，料诸君见我应如是</title>
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">iOS应用架构（下）
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-10-27 20:52:53">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-10-27T20:52:53+08:00">2020-10-27</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>3.2k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>3 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Bahargul</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main id="main">
+      <div class="inner">
+        <div id="content" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Human-Interface-Guidelines/" itemprop="item" rel="index" title="分类于 Human Interface Guidelines"><span itemprop="name">Human Interface Guidelines</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/27/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8B%EF%BC%89/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="溯小洄">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我看诸君皆装逼，料诸君见我应如是">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>模态情景是一种设计技术，它以一种临时模式呈现内容，这种模式与用户先前的当前上下文分离，并且需要一个明确的退出操作。</p>
+<a id="more"></a>
+<h3 id="模态情景"><a class="markdownIt-Anchor" href="#模态情景">#</a> 模态情景</h3>
+<p>模态情景可以</p>
+<ul>
+<li>帮助用户专注于一个独立的操作或一组紧密相关的选项</li>
+<li>确保人们收到重要信息，并在必要时采取行动</li>
+</ul>
+<p>iOS 提供了警报、活动视图 (或共享表) 和动作表，特定情况下你可以在 APP 使用它们。为了在 APP 中呈现自定义的模态情景内容，iOS 13 及以后版本支持以下显示样式。</p>
+<h4 id="页面表"><a class="markdownIt-Anchor" href="#页面表">#</a> 页面表</h4>
+<p>页面表显示为一张小卡片，其中的卡片部分覆盖了基础内容，未覆盖的区域变暗防止用户点击。主视图的顶部边缘或先前的卡在当前的卡后面是可见的，使用户记住遇到弹出提示前的操作。人们通过以下方式关闭弹窗提示：</p>
+<ul>
+<li>从屏幕顶部向下滑动</li>
+<li>卡内容滚动到顶部时，可以从屏幕上的任意位置向下滑动</li>
+<li>点击一个按钮</li>
+</ul>
+<p>为不启用复杂任务的非浸入式场景使用一个页面表。</p>
+<h4 id="全屏显示"><a class="markdownIt-Anchor" href="#全屏显示">#</a> <strong>全屏显示</strong></h4>
+<p>全屏展示覆盖了整个屏幕。以前的页面看不到，最大程度地减少视觉干扰。用户通过点击按钮来关闭全屏模式视图。</p>
+<p>使用全屏模式视图获取沉浸式内容（例如视频，照片或照相机视图），或用在全屏演示效果更好的复杂任务（例如标记文档或编辑照片）。</p>
+<blockquote>
+<p>如果使用当前上下文模式视图样式拆分视图窗格、弹出窗口或其他非全屏视图中显示模式内容，则在紧凑环境中显示模式内容时，应切换为使用工作表。</p>
+</blockquote>
+<h4 id="在有意义时使用模态"><a class="markdownIt-Anchor" href="#在有意义时使用模态">#</a> <strong>在有意义时使用模态</strong></h4>
+<p>仅在将人们的注意力集中在做出选择或执行与当前操作不同的任务上关键时期，才创建模态体验。模态体验会使人们脱离当前环境，需要采取行动才能关闭，因此只有在提供明显好处时才使用它。</p>
+<h4 id="保留提供必要且理想的可操作的提示信息"><a class="markdownIt-Anchor" href="#保留提供必要且理想的可操作的提示信息">#</a> <strong>保留提供必要且理想的可操作的提示信息</strong></h4>
+<p>通常，出现问题时需要提示用户。由于提示会中断体验并需要点击才能关闭，因此让用户感到这个提示是必要的，这一点很重要。有关指导，请参阅<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3Mvdmlld3MvYWxlcnRzLw==">提示</span>。</p>
+<h4 id="保持模态任务简单简短重点突出"><a class="markdownIt-Anchor" href="#保持模态任务简单简短重点突出">#</a> <strong>保持模态任务简单，简短，重点突出</strong></h4>
+<p>不要在您的 APP 中创建 APP。如果模态任务过于复杂，⼈们可能会在进⼊模态上下文时忽略他们之前的操作。尤其要谨慎创建涉及视图层次结构的模态任务，因为用户可能忘记操作到哪里了并忘记如何回到之前的操作路径。如果模态任务必须包含子视图，请提供层次结构中的单个路径以及完成的明确路径。避免使用 “完成” 按钮执⾏除完成任务之外的其他操作。</p>
+<h4 id="提供一种明显且安全的退出模态任务的按钮"><a class="markdownIt-Anchor" href="#提供一种明显且安全的退出模态任务的按钮">#</a> <strong>提供⼀种明显且安全的退出模态任务的按钮</strong></h4>
+<p>例如，您可以使用 “完成” 或 “取消”。确保退出按钮可以正常使用，并提供了一个替代关闭动作的手势。</p>
+<h4 id="如果适用显示标识任务的标题"><a class="markdownIt-Anchor" href="#如果适用显示标识任务的标题">#</a> <strong>如果适⽤，显示标识任务的标题</strong></h4>
+<p>当人们进入模态任务时，他们会离开先前的页面，因此最好将新的页面内容弄清楚。您也可以在视图的其他部分提供文本，更完整地描述任务或提供指导。</p>
+<h4 id="模态视图与app设计保持一致"><a class="markdownIt-Anchor" href="#模态视图与app设计保持一致">#</a> <strong>模态视图与 APP 设计保持一致</strong></h4>
+<p>例如，当模式视图包含导航栏时，其外观应与 APP 中的导航栏相同。</p>
+<h4 id="使用在app有意义的模态过渡样式"><a class="markdownIt-Anchor" href="#使用在app有意义的模态过渡样式">#</a> <strong>使用在 APP 有意义的模态过渡样式</strong></h4>
+<p>使用与 APP 相协调的过渡样式，并增强对临时内容转移的意识。默认过渡是在模式视图关闭时，默认过渡从屏幕底部垂直向上滑动，并在关闭时返回。在整个应用中使用一致的模式过渡样式。</p>
+<p>有关开发人员指南，<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2RvY3VtZW50YXRpb24vdWlraXQvdWl2aWV3Y29udHJvbGxlcg==">UIView 控制器</span>和<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2RvY3VtZW50YXRpb24vdWlraXQvdWlwcmVzZW50YXRpb25jb250cm9sbGVy"> UIPresentation 控制器</span></p>
+<hr>
+<h3 id="导航"><a class="markdownIt-Anchor" href="#导航">#</a> 导航</h3>
+<p>用户往往不会意识到 APP 的导航，直到它无法满足需求。您的工作就是以一种支持 APP 结构和目的的方式来设计导航，而无需关注导航自身。导航应该自然而又熟悉，并且不应该主导界面或将焦点从内容移开。在 iOS 中，有三种主要的导航样式。</p>
+<h4 id="分层导航"><a class="markdownIt-Anchor" href="#分层导航">#</a> <strong>分层导航</strong></h4>
+<p>每个页面作出一个选项，直到到达需求页面。要到达另一个页面，您必须返回或从头开始并做出不同的选择。设置和邮件使用此导航样式。</p>
+<img data-src="https://i.loli.net/2020/10/27/crNG8aTUlVIZ6tQ.png" style="zoom:33%;" />
+<h4 id="平面导航"><a class="markdownIt-Anchor" href="#平面导航">#</a> <strong>平面导航</strong></h4>
+<p>在多个内容类别之间切换。音乐和 App Store 使用此导航样式。</p>
+<img data-src="https://i.loli.net/2020/10/27/dZVzlIfS3DOkgbs.png" style="zoom:33%;" />
+<h4 id="内容驱动或体验驱动的导航"><a class="markdownIt-Anchor" href="#内容驱动或体验驱动的导航">#</a> <strong>内容驱动或体验驱动的导航</strong></h4>
+<p>在内容之间自由移动，或者内容本身定义导航。游戏，书籍和其他沉浸式应用通常使用这种导航样式。</p>
+<img data-src="https://i.loli.net/2020/10/27/saNGJIABuvp7bgH.png" alt="saNGJIABuvp7bgH" style="zoom:33%;" />
+<blockquote>
+<p>有些 APP 结合了多种导航样式。例如，使用平面导航的 APP 可以在每个类别内实施分层导航。</p>
+</blockquote>
+<h4 id="始终提供清晰的路径"><a class="markdownIt-Anchor" href="#始终提供清晰的路径">#</a> <strong>始终提供清晰的路径</strong></h4>
+<p>用户应该始终知道他们在 APP 中的位置以及如何到达下一个目的地。无论导航风格如何，内容的路径必须合理，可预测且易于遵循。通常，给人们一个通往每个页面的路径。如果他们需要在多个上下文中查看页面，请考虑使用操作表，警报，弹出窗口或模式视图。要了解更多信息，请参阅<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3Mvdmlld3MvYWN0aW9uLXNoZWV0cy8=">操作表</span>，<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3Mvdmlld3MvYWxlcnRzLw==">警报</span>，<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3Mvdmlld3MvcG9wb3ZlcnMv">弹出窗口</span>和<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3MvYXBwLWFyY2hpdGVjdHVyZS9tb2RhbGl0eS8=">模态视图</span>。</p>
+<h4 id="设计一种信息结构使用户快速而轻松地获取内容"><a class="markdownIt-Anchor" href="#设计一种信息结构使用户快速而轻松地获取内容">#</a> <strong>设计一种信息结构，使用户快速而轻松地获取内容</strong></h4>
+<p>以最少的点击，滑动和显示屏幕的方式来组织信息结构。</p>
+<h4 id="使用触摸手势创建流畅性"><a class="markdownIt-Anchor" href="#使用触摸手势创建流畅性">#</a> <strong>使用触摸手势创建流畅性</strong></h4>
+<p>使用最小摩擦力跳转界面。例如，您可以让人们从屏幕侧面滑动以返回上一个屏幕。</p>
+<h4 id="使用标准导航组件"><a class="markdownIt-Anchor" href="#使用标准导航组件">#</a> 使用标准导航组件</h4>
+<p>尽可能使用标准导航控件，例如页面控件，选项卡栏，分段控件，表视图，集合视图和拆分视图。用户已经熟悉这些控件，并且会直观地知道如何使用您的应用程序。</p>
+<h4 id="使用导航栏遍历数据层次结构"><a class="markdownIt-Anchor" href="#使用导航栏遍历数据层次结构">#</a> <strong>使用导航栏遍历数据层次结构</strong></h4>
+<p>导航栏的标题可以显示层次结构中的当前位置，并且使用后退按钮可以轻松返回到先前的位置。有关具体指导，请参见<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3MvYmFycy9uYXZpZ2F0aW9uLWJhcnMv">导航栏</span>。</p>
+<h4 id="使用选项卡栏显示内容或功能的同级类别"><a class="markdownIt-Anchor" href="#使用选项卡栏显示内容或功能的同级类别">#</a> <strong>使用选项卡栏显示内容或功能的同级类别</strong></h4>
+<p>标签栏使人们可以快速轻松地在类别之间进行切换，而与当前位置无关。有关具体指导，请参见<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3MvYmFycy90YWItYmFycy8=">标签栏</span>。</p>
+<h4 id="在ipad上使用拆分视图而不是标签栏"><a class="markdownIt-Anchor" href="#在ipad上使用拆分视图而不是标签栏">#</a> <strong>在 iPad 上，使用拆分视图而不是标签栏</strong></h4>
+<p>拆分视图提供与选项卡栏相同的快速导航，同时更好地利用了大屏幕。有关指导，请参见<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3Mvdmlld3Mvc3BsaXQtdmlld3Mv">拆分视图</span>。</p>
+<h4 id="当您具有内容类型相同的多个页面时请使用页面控件"><a class="markdownIt-Anchor" href="#当您具有内容类型相同的多个页面时请使用页面控件">#</a> 当您具有内容类型相同的多个页面时，请使用页面控件</h4>
+<p>页面控件清楚地传达了可用页面的数量以及当前处于活动状态的页面。天气应用程序使用页面控件来显示特定于位置的天气页面。有关具体指导，请参见<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2Rlc2lnbi9odW1hbi1pbnRlcmZhY2UtZ3VpZGVsaW5lcy9pb3MvY29udHJvbHMvcGFnZS1jb250cm9scy8=">页面控件</span>。</p>
+<h3 id="请求权限"><a class="markdownIt-Anchor" href="#请求权限">#</a> 请求权限</h3>
+<p>用户必须授予 APP 访问个人信息的权限，包括当前位置，日历，联系信息，提醒和照片。尽管用户喜欢这带来的便利，但他们也希望能够保护隐私数据。例如，用户喜欢能够使用实际位置自动标记照片或找到附近的朋友，但他们也希望选择禁用这些功能。</p>
+<h4 id="仅在app明确需要时才请求个人数据"><a class="markdownIt-Anchor" href="#仅在app明确需要时才请求个人数据">#</a> <strong>仅在 APP 明确需要时才请求个人数据</strong></h4>
+<p>对个人信息的请求感到怀疑是很自然的，尤其是在没有明显需求的情况下。确保仅在用户使用明显需要个人数据的功能时才发出许可请求。例如，应用可能仅在激活位置跟踪功能时才请求访问当前位置。</p>
+<h4 id="解释app为何需要该信息"><a class="markdownIt-Anchor" href="#解释app为何需要该信息">#</a> <strong>解释 APP 为何需要该信息</strong></h4>
+<p>提供自定义文本（目的字符串或用法描述字符串）以显示在系统的权限请求提示中，并提供示例。保持文字简短明了，使用句子大写并保持礼貌，让用户不会感到压力。无需包括您的 APP 名称 - 系统已经可以识别您的应用程序。有关开发人员的指导，请参阅<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2RvY3VtZW50YXRpb24vdWlraXQvY29yZV9hcHAvcHJvdGVjdGluZ190aGVfdXNlcl9zX3ByaXZhY3k=">保护用户隐私</span>。</p>
+<img data-src="https://i.loli.net/2020/10/27/cNV38ZAj7gv4G9k.png" alt="cNV38ZAj7gv4G9k" style="zoom:33%;" />
+<h4 id="仅在app运行时才在启动时请求权限"><a class="markdownIt-Anchor" href="#仅在app运行时才在启动时请求权限">#</a> 仅在 APP 运行时才在启动时请求权限</h4>
+<p>如果很明显您的应用程序依赖于其个人信息进行操作，那么用户将不会对此请求感到困扰。</p>
+<h4 id="不要不必要地请求位置信息"><a class="markdownIt-Anchor" href="#不要不必要地请求位置信息">#</a> 不要不必要地请求位置信息</h4>
+<p>在访问位置信息之前，请检查系统查看是否启用了位置服务。有了这些知识，您可以将提示延迟到某个功能真正需要的时候，或者完全避免提示。要了解如何实现位置功能，请参见<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2RvY3VtZW50YXRpb24vbWFwa2l0"> MapKit</span> 和<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2xpYnJhcnkvY29udGVudC9kb2N1bWVudGF0aW9uL1VzZXJFeHBlcmllbmNlL0NvbmNlcHR1YWwvTG9jYXRpb25Bd2FyZW5lc3NQRy9JbnRyb2R1Y3Rpb24vSW50cm9kdWN0aW9uLmh0bWw=">位置和地图编程指南</span>。</p>
+<h4 id="使用系统提供的警报"><a class="markdownIt-Anchor" href="#使用系统提供的警报">#</a> 使用系统提供的警报</h4>
+<p>您可以在标准权限提示中自定义文本，但要避免添加自定义提示来复制标准提示的行为或外观。</p>
+<h3 id="设置"><a class="markdownIt-Anchor" href="#设置">#</a> 设置</h3>
+<p>某些 APP 可能需要提供一种方法来进行设置或配置选择，但大多数 APP 可以避免或推迟这样做。成功的应用程序立即适用于大多数人，同时还提供了一些便捷的方式来调整体验。当您将 APP 设计为可以满足大多数人期望的方式运行时，您会减少对设置的需求。</p>
+<h4 id="推断从系统从能获得什么"><a class="markdownIt-Anchor" href="#推断从系统从能获得什么">#</a> 推断从系统从能获得什么</h4>
+<p>如果您需要有关用户，设备或环境的信息，请在可能的情况下向系统查询，而不是询问用户。例如，不要要求某人输入他们的邮政编码，以便您可以显示本地选项，而要寻求使用其当前位置的权限。如果用户拒绝访问其信息，则可以正常地退回到手动输入。</p>
+<h4 id="周全地考虑app的设置选项的优先级"><a class="markdownIt-Anchor" href="#周全地考虑app的设置选项的优先级">#</a> 周全地考虑 APP 的设置选项的优先级。</h4>
+<p>APP 的主页面是一些必不可少或经常更改的选项的地方。其他页面最好用于仅偶尔更改的选项。</p>
+<h4 id="在设置中公开不经常更改的配置选项"><a class="markdownIt-Anchor" href="#在设置中公开不经常更改的配置选项">#</a> <strong>在 “设置” 中公开不经常更改的配置选项</strong></h4>
+<p>“设置” 应用是在整个系统中进行配置更改的中心位置，但是用户必须离开 APP 才能到达那里。直接在 APP 内调整设置要方便得多。如果您必须提供很少需要更改的设置，请参阅<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2xpYnJhcnkvY29udGVudC9kb2N1bWVudGF0aW9uL0NvY29hL0NvbmNlcHR1YWwvVXNlckRlZmF1bHRzL1ByZWZlcmVuY2VzL1ByZWZlcmVuY2VzLmh0bWw=">《</span><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2xpYnJhcnkvY29udGVudC9kb2N1bWVudGF0aW9uL0NvY29hL0NvbmNlcHR1YWwvVXNlckRlZmF1bHRzL0ludHJvZHVjdGlvbi9JbnRyb2R1Y3Rpb24uaHRtbA==">偏好和设置编程指南</span><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2xpYnJhcnkvY29udGVudC9kb2N1bWVudGF0aW9uL0NvY29hL0NvbmNlcHR1YWwvVXNlckRlZmF1bHRzL1ByZWZlcmVuY2VzL1ByZWZlcmVuY2VzLmh0bWw=">》</span>中的<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2xpYnJhcnkvY29udGVudC9kb2N1bWVudGF0aW9uL0NvY29hL0NvbmNlcHR1YWwvVXNlckRlZmF1bHRzL0ludHJvZHVjdGlvbi9JbnRyb2R1Y3Rpb24uaHRtbA=="> “</span><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2xpYnJhcnkvY29udGVudC9kb2N1bWVudGF0aW9uL0NvY29hL0NvbmNlcHR1YWwvVXNlckRlZmF1bHRzL1ByZWZlcmVuY2VzL1ByZWZlcmVuY2VzLmh0bWw=">实现 iOS 设置捆绑包</span><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2xpYnJhcnkvY29udGVudC9kb2N1bWVudGF0aW9uL0NvY29hL0NvbmNlcHR1YWwvVXNlckRlZmF1bHRzL0ludHJvZHVjdGlvbi9JbnRyb2R1Y3Rpb24uaHRtbA==">”</span> 以获取开发人员指南。</p>
+
+      <div class="tags">
+          <a href="/tags/ios%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/" rel="tag"><i class="ic i-tag"></i> ios设计规范</a>
+          <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" rel="tag"><i class="ic i-tag"></i> 互联网</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-10-27 22:29:43" itemprop="dateModified" datetime="2020-10-27T22:29:43+08:00">2020-10-27</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="溯小洄 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="溯小洄 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="溯小洄 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>溯小洄 <i class="ic i-at"><em>@</em></i>我看诸君皆装逼，料诸君见我应如是
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2020/10/27/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8B%EF%BC%89/" title="iOS应用架构（下）">http://example.com/2020/10/27/ios应用架构（下）/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="nav">
+    <div class="item left">
+      
+
+  <a href="/2020/10/26/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8A%EF%BC%89/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxp31goj20zk0m8qv5.jpg" title="iOS应用架构（上）">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Human Interface Guidelines</span>
+  <h3>iOS应用架构（上）</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%80%81%E6%83%85%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text"> 模态情景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E8%A1%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 页面表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%8F%E6%98%BE%E7%A4%BA"><span class="toc-number">1.2.</span> <span class="toc-text"> 全屏显示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E6%9C%89%E6%84%8F%E4%B9%89%E6%97%B6%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%80%81"><span class="toc-number">1.3.</span> <span class="toc-text"> 在有意义时使用模态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%9D%E7%95%99%E6%8F%90%E4%BE%9B%E5%BF%85%E8%A6%81%E4%B8%94%E7%90%86%E6%83%B3%E7%9A%84%E5%8F%AF%E6%93%8D%E4%BD%9C%E7%9A%84%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF"><span class="toc-number">1.4.</span> <span class="toc-text"> 保留提供必要且理想的可操作的提示信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%9D%E6%8C%81%E6%A8%A1%E6%80%81%E4%BB%BB%E5%8A%A1%E7%AE%80%E5%8D%95%E7%AE%80%E7%9F%AD%E9%87%8D%E7%82%B9%E7%AA%81%E5%87%BA"><span class="toc-number">1.5.</span> <span class="toc-text"> 保持模态任务简单，简短，重点突出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BE%9B%E4%B8%80%E7%A7%8D%E6%98%8E%E6%98%BE%E4%B8%94%E5%AE%89%E5%85%A8%E7%9A%84%E9%80%80%E5%87%BA%E6%A8%A1%E6%80%81%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%89%E9%92%AE"><span class="toc-number">1.6.</span> <span class="toc-text"> 提供⼀种明显且安全的退出模态任务的按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E9%80%82%E7%94%A8%E6%98%BE%E7%A4%BA%E6%A0%87%E8%AF%86%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%A0%87%E9%A2%98"><span class="toc-number">1.7.</span> <span class="toc-text"> 如果适⽤，显示标识任务的标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%80%81%E8%A7%86%E5%9B%BE%E4%B8%8Eapp%E8%AE%BE%E8%AE%A1%E4%BF%9D%E6%8C%81%E4%B8%80%E8%87%B4"><span class="toc-number">1.8.</span> <span class="toc-text"> 模态视图与 APP 设计保持一致</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%A8app%E6%9C%89%E6%84%8F%E4%B9%89%E7%9A%84%E6%A8%A1%E6%80%81%E8%BF%87%E6%B8%A1%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.9.</span> <span class="toc-text"> 使用在 APP 有意义的模态过渡样式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA"><span class="toc-number">2.</span> <span class="toc-text"> 导航</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B1%82%E5%AF%BC%E8%88%AA"><span class="toc-number">2.1.</span> <span class="toc-text"> 分层导航</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E5%AF%BC%E8%88%AA"><span class="toc-number">2.2.</span> <span class="toc-text"> 平面导航</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E9%A9%B1%E5%8A%A8%E6%88%96%E4%BD%93%E9%AA%8C%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%AF%BC%E8%88%AA"><span class="toc-number">2.3.</span> <span class="toc-text"> 内容驱动或体验驱动的导航</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A7%8B%E7%BB%88%E6%8F%90%E4%BE%9B%E6%B8%85%E6%99%B0%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-number">2.4.</span> <span class="toc-text"> 始终提供清晰的路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%80%E7%A7%8D%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E6%88%B7%E5%BF%AB%E9%80%9F%E8%80%8C%E8%BD%BB%E6%9D%BE%E5%9C%B0%E8%8E%B7%E5%8F%96%E5%86%85%E5%AE%B9"><span class="toc-number">2.5.</span> <span class="toc-text"> 设计一种信息结构，使用户快速而轻松地获取内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%A7%A6%E6%91%B8%E6%89%8B%E5%8A%BF%E5%88%9B%E5%BB%BA%E6%B5%81%E7%95%85%E6%80%A7"><span class="toc-number">2.6.</span> <span class="toc-text"> 使用触摸手势创建流畅性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%A0%87%E5%87%86%E5%AF%BC%E8%88%AA%E7%BB%84%E4%BB%B6"><span class="toc-number">2.7.</span> <span class="toc-text"> 使用标准导航组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E9%81%8D%E5%8E%86%E6%95%B0%E6%8D%AE%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">2.8.</span> <span class="toc-text"> 使用导航栏遍历数据层次结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%80%89%E9%A1%B9%E5%8D%A1%E6%A0%8F%E6%98%BE%E7%A4%BA%E5%86%85%E5%AE%B9%E6%88%96%E5%8A%9F%E8%83%BD%E7%9A%84%E5%90%8C%E7%BA%A7%E7%B1%BB%E5%88%AB"><span class="toc-number">2.9.</span> <span class="toc-text"> 使用选项卡栏显示内容或功能的同级类别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8ipad%E4%B8%8A%E4%BD%BF%E7%94%A8%E6%8B%86%E5%88%86%E8%A7%86%E5%9B%BE%E8%80%8C%E4%B8%8D%E6%98%AF%E6%A0%87%E7%AD%BE%E6%A0%8F"><span class="toc-number">2.10.</span> <span class="toc-text"> 在 iPad 上，使用拆分视图而不是标签栏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%93%E6%82%A8%E5%85%B7%E6%9C%89%E5%86%85%E5%AE%B9%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%90%8C%E7%9A%84%E5%A4%9A%E4%B8%AA%E9%A1%B5%E9%9D%A2%E6%97%B6%E8%AF%B7%E4%BD%BF%E7%94%A8%E9%A1%B5%E9%9D%A2%E6%8E%A7%E4%BB%B6"><span class="toc-number">2.11.</span> <span class="toc-text"> 当您具有内容类型相同的多个页面时，请使用页面控件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%9D%83%E9%99%90"><span class="toc-number">3.</span> <span class="toc-text"> 请求权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%85%E5%9C%A8app%E6%98%8E%E7%A1%AE%E9%9C%80%E8%A6%81%E6%97%B6%E6%89%8D%E8%AF%B7%E6%B1%82%E4%B8%AA%E4%BA%BA%E6%95%B0%E6%8D%AE"><span class="toc-number">3.1.</span> <span class="toc-text"> 仅在 APP 明确需要时才请求个人数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8Aapp%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81%E8%AF%A5%E4%BF%A1%E6%81%AF"><span class="toc-number">3.2.</span> <span class="toc-text"> 解释 APP 为何需要该信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%85%E5%9C%A8app%E8%BF%90%E8%A1%8C%E6%97%B6%E6%89%8D%E5%9C%A8%E5%90%AF%E5%8A%A8%E6%97%B6%E8%AF%B7%E6%B1%82%E6%9D%83%E9%99%90"><span class="toc-number">3.3.</span> <span class="toc-text"> 仅在 APP 运行时才在启动时请求权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E8%A6%81%E4%B8%8D%E5%BF%85%E8%A6%81%E5%9C%B0%E8%AF%B7%E6%B1%82%E4%BD%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">3.4.</span> <span class="toc-text"> 不要不必要地请求位置信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AD%A6%E6%8A%A5"><span class="toc-number">3.5.</span> <span class="toc-text"> 使用系统提供的警报</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text"> 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E6%96%AD%E4%BB%8E%E7%B3%BB%E7%BB%9F%E4%BB%8E%E8%83%BD%E8%8E%B7%E5%BE%97%E4%BB%80%E4%B9%88"><span class="toc-number">4.1.</span> <span class="toc-text"> 推断从系统从能获得什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%A8%E5%85%A8%E5%9C%B0%E8%80%83%E8%99%91app%E7%9A%84%E8%AE%BE%E7%BD%AE%E9%80%89%E9%A1%B9%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">4.2.</span> <span class="toc-text"> 周全地考虑 APP 的设置选项的优先级。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%85%AC%E5%BC%80%E4%B8%8D%E7%BB%8F%E5%B8%B8%E6%9B%B4%E6%94%B9%E7%9A%84%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="toc-number">4.3.</span> <span class="toc-text"> 在 “设置” 中公开不经常更改的配置选项</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2020/10/26/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8A%EF%BC%89/" rel="bookmark" title="iOS应用架构（上）">iOS应用架构（上）</a></li><li class="active"><a href="/2020/10/27/ios%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%EF%BC%88%E4%B8%8B%EF%BC%89/" rel="bookmark" title="iOS应用架构（下）">iOS应用架构（下）</a></li><li><a href="/2020/10/25/ios%E8%AE%BE%E8%AE%A1%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="iOS设计介绍">iOS设计介绍</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="溯小洄"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">溯小洄</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">18</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">13</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JpY2hiYWhhcg==" title="https:&#x2F;&#x2F;github.com&#x2F;richbahar"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnJpY2hiYWhhckAxNjMuY29t" title="mailto:richbahar@163.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">溯小洄 @ Bahargul</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">68k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:01</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/10/27/ios应用架构（下）/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.3"></script>
+
+
+
+
+</body>
+</html>
